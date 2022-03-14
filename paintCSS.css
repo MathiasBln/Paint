@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 5%;
+  background-color: rgb(63, 63, 63);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+}
+
+.ToolsBar {
+  width: auto;
+  grid-column: 1;
+  grid-row: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #cecece;
+  box-shadow: 2px 2px 5px 2px #000000;
+}
+.DrawBoard {
+  width: auto;
+  height: 700px;
+  box-shadow: 2px 0px 5px 2px #000000;
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0 0 2% 2%;
+  background-color: white;
+}
+
+button:hover {
+  background-color: #a2a1a1;
+}
+
+.UnderBoxButton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #797979;
+  box-shadow: 2px 2px 5px 0px #000000;
+}
+
+.UnderBox {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 2% 0 2% 2%;
+  height: auto;
+
+  padding: 2% 0 2% 1%;
+}
+
+.UnderBoxExport {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 2% 2% 2% 0;
+  height: auto;
+
+  padding: 2% 0 2% 1%;
+}
+
+.SaveCTA {
+  width: auto;
+  margin-right: 2%;
+  padding: 2%;
+  border: none;
+  background-color: #cecece;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.316);
+  border-radius: 5px;
+}
+
+.LoadCTA {
+  margin-right: 2%;
+  padding: 2%;
+  border: none;
+  background-color: #cecece;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.316);
+  border-radius: 5px;
+}
+
+.ExportPNGCTA {
+  margin-right: 2%;
+  padding: 2%;
+  border: none;
+  background-color: #cecece;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.316);
+  border-radius: 5px;
+}
+
+.ExportPDFCTA {
+  margin-right: 2%;
+  padding: 2%;
+  border: none;
+  background-color: #cecece;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.316);
+  border-radius: 5px;
+}
+
+svg {
+  text-align: center;
+}
+
+.Tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: grab;
+
+  margin-right: 2%;
+  padding: 2%;
+  border: none;
+  background-color: #cecece;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px rgba(114, 114, 114, 0.316);
+  border-radius: 5px;
+}
+
+.tenu {
+  border-style: dashed;
+}
+
+.ColorsInput {
+  margin-top: 50%;
+}
+
+#FontStyle {
+  margin-top: 50%;
+  text-align: center;
+}
+
+.ButtonTools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+}
