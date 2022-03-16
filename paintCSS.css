@@ -21,6 +21,7 @@ body {
   box-shadow: 2px 2px 5px 2px #000000;
 }
 .DrawBoard {
+  position: relative;
   width: auto;
   height: 700px;
   box-shadow: 2px 0px 5px 2px #000000;
@@ -28,6 +29,10 @@ body {
   grid-row: 1;
   margin: 0 0 2% 2%;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 button:hover {
@@ -143,5 +148,12 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5%;
+}
+
+.trash {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   margin: 5%;
 }
