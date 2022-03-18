@@ -1,5 +1,14 @@
 # Paint
 
+## Equipe
+
+Ugo DUMOUCHEL
+Martin CLAVER
+Yassine HABIBI
+Louis ROCCA
+Julien VERITE
+Mathias BOUILLON
+
 ## Contexte
 
 Vous devrez réaliser un outil de design de formes, proche du logiciel Paint, avec les technologies HTML, Css et JavaScript.
