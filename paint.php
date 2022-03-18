@@ -150,15 +150,17 @@
 
     <div class="UnderBoxButton">
         <div class="UnderBox">
-            <button class="SaveCTA">Save</button>
+            <button class="SaveCTA" type="button" onclick="saveToHTML(event)">Save</button>
             <button class="LoadCTA">Load</button>
         </div>
 
-    <?php
-    $theme = filter_input(INPUT_COOKIE, "save");
-    ?>
-
     <div class="UnderBoxExport">
+    <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
+        <label for="nameOfDoc">Nom du fichier<input type="text" name="nameOfDoc" id="nameOfDoc"></label>
+        <div class="form-example">
+            <input type="submit" value="Enregistrer">
+        </div>
+    </form>
         <button class="ExportPNGCTA" type="button" onclick="saveToPNG(event)">Enregister en PNG</button>
         <button class="ExportPDFCTA" type="button" onclick="saveToPDF(event)">Enregister en PDF</button>
     </div>
