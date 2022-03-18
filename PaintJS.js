@@ -586,6 +586,26 @@ function saveToPDF(event) {
   });
 }
 
+// Fonction save to PDF
+function saveToHTML(event) {
+    // Lance la recherche
+    const formData = new FormData();
+    formData.append("code", Paper.outerHTML);
+  
+    fetch('saveToHTML.php',  {
+        method: 'POST',
+        body: formData
+    })
+    .then(dataWrappedByPromise => dataWrappedByPromise.text())
+    .then(data => {
+        console.log(data)
+    })
+    .catch((error) => {
+        console.log('Erreur : ' + error.message);
+    });
+  }
+
+  
 // Fonction qui supprime toute la div(reload la page)
 
 function DeleteBoard(){
