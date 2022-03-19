@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <table class="ToolsBar">
         <tbody>
             <tr class="ButtonTools">
@@ -165,17 +164,8 @@
         <button class="ExportPDFCTA" type="button" onclick="saveToPDF(event)">Enregister en PDF</button>
     </div>
 
-
-
-
-
-
-
-
-
-
 </body>
-<script src="PaintJS.js">
-</script>
+
+<script src="PaintJS.js"> </script>
 
 </html>
