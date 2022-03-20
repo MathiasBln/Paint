@@ -53,3 +53,8 @@ Votre site doit se présenter sous la forme de deux zones principales:
 - Une grande zone blance pour permettre le dessin
 - Une zone avec la barre d'outils
 - Une zone avec la prossinilité de sauvegarder le dessin sur le serveur pour le reprendre plus tard, ou de l'exporter au format PDF ou PNG
+
+## Environnement / Librairie utilisées
+- Node.js pour avoir npm
+- Pupetteer
+- Browsershot
