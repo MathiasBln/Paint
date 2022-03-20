@@ -9,7 +9,7 @@ const PxValue = "px"
 const SolideValue = "solid"
 
 
-// Déclaration de la variable Paper c'est la class qui est sélectionné
+// Déclaration de la variable Paper c'est la class qui est sélectionnée
 const Paper = document.querySelector('.DrawBoard');
 
 
@@ -24,7 +24,7 @@ function drag_start(event) {
 }
 
 
-// On recupère les données en texte de 
+// On recupère les données en texte
 function drop(event) {
     // variable qui récupère les données dans une liste de la fonction drag_start
     var offset = event.dataTransfer.getData("Text").split(',');
@@ -47,7 +47,7 @@ function drag_over(event) {
 
 
 // fonction circle
-// varible utilisée pour avoir un ID unique
+// variable utilisée pour avoir un ID unique
 var count3 = 0
 function MyfunctionCircle(){ 
     count3 = count3 +1  
@@ -62,16 +62,16 @@ function MyfunctionCircle(){
     const rezisers = document.createElement('div') 
     // applique un style à une variable liée au HTML element.style.cssText=,(possible d'utilisé .style.background, .width, .color, etc.)
     rezisers.style.cssText='background-color:rgba(117, 190, 218, 0.0)'
-    // Ajout d'un attribue draggable True à la variable
+    // Ajout d'un attribut draggable True à la variable
     resizebale.draggable='true'
-    // ajoute d'attribue avec setAttibute pour drag&drop les élements
+    // ajoute d'attribut avec setAttibute pour drag&drop les élements
     resizebale.setAttribute("ondragstart","drag_start(event)")
     // utilisation des variables de style
     resizebale.style.cssText='position:relative; border-radius:50%; border: solid '+BorderStyle.value+'px'+ColorsBorder.value+'; width:'+''+InputTextWidth.value+'px; height:'+InputTextHeight.value+'px;  top:0; left:0; cursor:move;background-color:'+ColorsBackground.value
     rezisers.id='resizers'
-    // ajout de rezisers dans la balise parent resizebale 
+    // ajout de resizers dans la balise parent resizebale 
     resizebale.appendChild(rezisers)
-    // boucle qui créer 4 div qui seront utilisé pour sélectionner les coins
+    // boucle qui créer 4 div qui seront utilisées pour sélectionner les coins
     
     for(i=0;i<4;i++){
         const resize = document.createElement('div')
@@ -300,7 +300,7 @@ function MyfunctionRectangle(){
     RectangleResizebale.style.cssText ='position:relative;border: solid '+BorderStyle.value+'px'+ColorsBorder.value+'; width:'+''+InputTextWidth.value+'px; height:'+InputTextHeight.value+'px;  top:0; left:0; cursor:move;background-color:'+ColorsBackground.value;
   });
 
-  // ajout de point dans les corners
+  // ajout de points dans les corners
   const AllCircle1 = document.querySelectorAll('.Resizer0')
 
   const AllCircle = document.querySelectorAll('.RectangleCreator')
@@ -383,8 +383,6 @@ function MyfunctionTexte(){
   const Font = document.querySelector('#FontStyle')
   const TexteResizebale = document.createElement('textarea')
   
-  // TexteResizebale.setAttribute('rows',"5")
-  // TexteResizebale.setAttribute('cols',"25")
   TexteResizebale.setAttribute('placeholder',"Texte")
   
   TexteResizebale.id='TexteResizable'+count1
@@ -462,7 +460,7 @@ function saveToPDF(event) {
   });
 }
 
-// Fonction save to HTML (indentique ) PNG
+// Fonction save to HTML (identique) PNG
 function saveToHTML(event) {
     // Lance la recherche
     const formData = new FormData();
@@ -482,7 +480,7 @@ function saveToHTML(event) {
   }
 
   
-// Fonction qui supprime toute la div(reload la page)
+// Fonction qui supprime toute la div (reload la page)
 function DeleteBoard(){
     window.location.reload()
 }

@@ -12,16 +12,20 @@
 </head>
 
 <body>
+    <!-- Outils disponibles sous forme de tableau -->
     <table class="ToolsBar">
         <tbody>
             <tr class="ButtonTools">
+                <!-- Outil pour le carré -->
                 <td class="ButtonTools" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"><button class="Tools" id="SquareTools" onclick="MyfunctionRectangle()"><svg id="SVGSquare" height="24" viewBox="0 0 1792 1792" width="24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1312 256h-832q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113v-832q0-66-47-113t-113-47zm288 160v832q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 84.5-203.5t203.5-84.5h832q119 0 203.5 84.5t84.5 203.5z" />
                         </svg></button></td>
+                <!-- Outil pour le triangle -->
                 <td class="ButtonTools"><button class="Tools" id="TriangleTools" draggable="true" onclick="MyfunctionTriangle()"><svg id="SVGTriangle" class="feather feather-triangle" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
                         </svg></button></td>
             </tr>
+            <!-- Outil pour le cercle -->
             <tr class="ButtonTools">
                 <td class="ButtonTools"><button class="Tools" id="CircleTools" draggable="true" onclick="MyfunctionCircle()"><svg id="SVGCircle" height="24px" version="1.1" viewBox="0 0 20 20" width="24px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title />
@@ -35,7 +39,7 @@
                                 </g>
                             </g>
                         </svg></button></td>
-
+                <!-- Outil pour le texte -->
                 <td class="ButtonTools"><button class="Tools" id="TextTools" draggable="true" onclick="MyfunctionTexte()"><svg enable-background="new 0 0 32 32" height="24px" id="svg2" version="1.1" viewBox="0 0 32 32" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
                             <g id="background">
                                 <rect fill="none" height="32" width="32" />
@@ -49,7 +53,7 @@
             </tr>
 
             <tr class="ButtonTools">
-
+                <!-- Outil pour l'étoile -->
                 <td class="ButtonTools"><button class="Tools" id="StarTools" draggable="true" onclick="MyfunctionStar()">
                         <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 50 50" height="24px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <polygon fill="none" points="25,3.553 30.695,18.321 46.5,19.173   34.214,29.152 38.287,44.447 25,35.848 11.712,44.447 15.786,29.152 3.5,19.173 19.305,18.321 " stroke="#000000" stroke-miterlimit="10" stroke-width="3" />
@@ -58,7 +62,7 @@
             </tr>
 
             <tr class="ButtonsStyle">
-
+                    <!-- Outil pour choisir quelle police appliquer -->
                 <td class="ButtonFont">
                     <select name="Fonts" class="InputStyle" id="FontStyle">
                         <option value="Arial">Arial</option>
@@ -70,7 +74,7 @@
                 </td>
             </tr>
             <tr class="ButtonsStyle">
-
+                    <!-- Outil pour choisir quelle couleur appliquer au texte -->
                 <td class="ButtonTools" id='FontColor'>
                     <p>Police</p><input id="ColorsFont" type="color" value="#000000">
                 </td>
@@ -79,7 +83,7 @@
 
 
             <tr class="ButtonsStyle">
-
+                    <!-- Outil pour choisir quelle taille de bordure appliquer -->
                 <td class="ButtonStyle">
                     <select name="border" class="InputStyle" id="BorderStyle">
                         <option value="none">none</option>
@@ -91,7 +95,7 @@
                 </td>
 
             <tr class="ButtonsStyle">
-
+                    <!-- Outil pour choisir quelle couleur de bordure appliquer -->
                 <td class="ButtonTools" id='BorderColor'>
                     <p>Bordure</p><input id="ColorsBorder" type="color" value="#000000">
                 </td>
@@ -100,7 +104,7 @@
 
 
             <tr class="ButtonsStyle">
-
+                    <!-- Outil pour choisir quelle couleur de fond appliquer -->
                 <td class="ButtonTools" id="BackgroundColor">
                     <p>Background</p><input id="ColorsBackground" type="color" value="#FFFFFF">
                 </td>
@@ -109,20 +113,21 @@
 
 
             <tr class="ButtonsStyle">
-
+                    <!-- Outil pour choisir quelle largeur appliquer -->
                 <td class="ButtonTools">
                     <p>Largeur (px)</p><input id="SizeWidth" name="width" type="number" min="2" max="500" placeholder="Largeur" value="60">
                 </td>
             </tr>
 
             <tr class="ButtonsStyle">
-
+                    <!-- Outil pour choisir quelle hauteur appliquer -->
                 <td class="ButtonTools">
                     <p>Hauteur (px)</p><input id="SizeHeight" type="number" min="2" max="500" placeholder="Hauteur" value="60">
                 </td>
             </tr>
 
             <tr class="trash">
+                <!-- Outil pour supprimer tout le contenu du drawboard-->
                 <td>
                     <button class="Tools" id="Trash" onclick="DeleteBoard()"><svg height="24" width="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                             <title />
@@ -144,23 +149,28 @@
         </tbody>
     </table>
 
-
+    <!-- Endroit pour dessiner  -->
     <div class="DrawBoard" ondragover="drag_over(event)" ondrop="drop(event)"> </div>
 
     <div class="UnderBoxButton">
         <div class="UnderBox">
+            <!-- Bouton pour sauvegarder le dessin -->
             <button class="SaveCTA" type="button" onclick="saveToHTML(event)">Save</button>
+            <!-- Bouton pour charger un dessin -->
             <button class="LoadCTA">Load</button>
         </div>
 
     <div class="UnderBoxExport">
+        <!-- Formulaire afin de recupérer le nom du fichier donné par l'utilisateur -->
     <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
         <label for="nameOfDoc">Nom du fichier<input type="text" name="nameOfDoc" id="nameOfDoc"></label>
         <div class="form-example">
             <input type="submit" value="Enregistrer">
         </div>
     </form>
+    <!-- Bouton pour enregistrer le dessin en PNG -->
         <button class="ExportPNGCTA" type="button" onclick="saveToPNG(event)">Enregister en PNG</button>
+    <!-- Bouton pour enregistrer le dessin en PDF -->
         <button class="ExportPDFCTA" type="button" onclick="saveToPDF(event)">Enregister en PDF</button>
     </div>
 
