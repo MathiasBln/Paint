@@ -14,7 +14,7 @@ const Paper = document.querySelector('.DrawBoard');
 
 
 // Fonction qui permet de selectionner les valeurs Y et X d'un élément
-function drag_start(event) {
+function dragStart(event) {
     // stock les paramètres de l'écran
     var style = window.getComputedStyle(event.target, null);
     // stock les valeurs X et Y de l'élément ciblé
@@ -25,22 +25,22 @@ function drag_start(event) {
 
 
 // On recupère les données en texte
-function drop(event) {
-    // variable qui récupère les données dans une liste de la fonction drag_start
-    var offset = event.dataTransfer.getData("Text").split(',');
-    console.log(offset)
-    // récupère l'ID qui a comme position 3 dans la liste offset
-    var dm = document.getElementById(offset[2]);
-    // style appliqué à l'ID de la liste offset pour la position X (droite à gauche)
-    dm.style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
-    console.log(offset[0])
-    // style appliqué à l'ID de la liste offset pour la position Y (haut et bas)
-    dm.style.top = (event.clientY + parseInt(offset[1], 10)) + 'px'; 
+function dataGet(event) {
+    // variable qui récupère les données dans une liste de la fonction dragStart
+    var listData = event.dataTransfer.getData("Text").split(',');
+    console.log(listData)
+    // récupère l'ID qui a comme position 3 dans la listData
+    var IDGet = document.getElementById(listData[2]);
+    // style appliqué à l'ID de la listData pour la position X (droite à gauche)
+    IDGet.style.left = (event.clientX + parseInt(listData[0], 10)) + 'px';
+    console.log(listData[0])
+    // style appliqué à l'ID de la listData pour la position Y (haut et bas)
+    IDGet.style.top = (event.clientY + parseInt(listData[1], 10)) + 'px'; 
 }
 
 
 // stop le drag grâce à la méthode preventDefault()
-function drag_over(event) {
+function dragOver(event) {
     event.preventDefault();
     return false;
 }
@@ -267,8 +267,59 @@ function MyfunctionStar(){
     polygon.style.cssText ="fill :"+ColorsBackground.value+" ; stroke:"+ColorsBorder.value+"; stroke-width :"+BorderStyle.value+";"
     Star.style.cssText="width:"+InputTextWidth.value+"px; height:"+InputTextHeight.value+"px; cursor:move"
     StarDiv.style.cssText='position:relative;top:0;left:0; width:'+InputTextWidth.value+'px; height:'+InputTextHeight.value+'px;'
+  });
+
+
+  for(i=0;i<4;i++){
+
+    const resize = document.createElement('div');
+    resize.classList='Resizer'+i;
+    StarDiv.appendChild(resize)
+   }
+   ListOfSizer.addEventListener('mousedown', function(e) {
+    e.preventDefault()
+    window.addEventListener('mousemove', resize)
+    window.addEventListener('mouseup', stopResize)
   })
-} 
+
+  function resize(e) {
+    console.log(ListOfSizer);
+    if (ListOfSizer.classList.contains('Resizer1')) {
+        Star.style.width = e.pageX - Star.getBoundingClientRect().left + 'px';
+        StarDiv.style.width = e.pageX - StarDiv.getBoundingClientRect().left + 'px';
+    }
+  }
+          
+  function stopResize() {
+    window.removeEventListener('mousemove', resize)
+  }  
+}
+  
+const sizer3 = document.querySelectorAll('.Resizer2')
+
+for(i=0;i<sizer3.length;i++){
+  const ListOfSizer = sizer3[i]
+     
+  ListOfSizer.addEventListener('mousedown', function(e) {  
+    e.preventDefault()
+    window.addEventListener('mousemove', resize)
+    window.addEventListener('mouseup', stopResize)
+  })
+
+  function resize(e) {
+    console.log(ListOfSizer);
+    if (ListOfSizer.classList.contains('Resizer2')) {
+      Star.style.height = Star.getBoundingClientRect().right - e.pageX + 'px';
+      StarDiv.style.height = StarDiv.getBoundingClientRect().right - e.pageX + 'px';
+    }
+    console.log(Star.getBoundingClientRect().right - e.pageX)         
+  }
+
+  function stopResize() {
+    window.removeEventListener('mousemove', resize)
+  }
+}
+
 
 
 // fonction rectangle pareil que fonction circle
@@ -281,19 +332,19 @@ function MyfunctionRectangle(){
   RectangleResizebale.classList='RectangleCreator'
   Paper.appendChild(RectangleResizebale)
   
-  const RectangleRezisers = document.createElement('div') 
+  const RectangleResizers = document.createElement('div') 
   RectangleResizebale.draggable='true'
   RectangleResizebale.setAttribute("ondragstart","drag_start(event)")
   RectangleResizebale.style.cssText='width:'+InputTextWidth.value+'px; height:'+InputTextHeight.value+'px; border: solid '+BorderStyle.value+'px'+ColorsBorder.value+';background-color:'+ColorsBackground.value
   RectangleResizebale.style.display='visibility:hidden;'
-  RectangleRezisers.id='Resizers'
+  RectangleResizers.id='Resizers'
   // RectangleRezisers.style.cssText='width: 100%;height: 100%;border: 3px solid blue;box-sizing: border-box;'
-  RectangleResizebale.appendChild(RectangleRezisers)
+  RectangleResizebale.appendChild(RectangleResizers)
   for(i=0;i<4;i++){
     const RectangleResize = document.createElement('div')
     RectangleResize.classList='Resizer'+i
     RectangleResize.id='resizer'
-    RectangleRezisers.appendChild(RectangleResize)
+    RectangleResizers.appendChild(RectangleResize)
   }
 
   RectangleResizebale.addEventListener('dblclick', function (e) {
@@ -304,13 +355,6 @@ function MyfunctionRectangle(){
   const AllCircle1 = document.querySelectorAll('.Resizer0')
 
   const AllCircle = document.querySelectorAll('.RectangleCreator')
-  const minimum_size = 20;
-  let original_width = 0;
-  let original_height = 0;
-  let original_x = 0;
-  let original_y = 0;
-  let original_mouse_x = 0;
-  let original_mouse_y = 0;
 
   for(i=0;i<AllCircle1.length;i++){ 
     console.log(RectangleResizebale)

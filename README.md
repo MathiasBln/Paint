@@ -58,3 +58,16 @@ Votre site doit se présenter sous la forme de deux zones principales:
 - Node.js pour avoir npm
 - Pupetteer
 - Browsershot
+
+## Mode d'emploi d'utilisations des outils
+- Formes géométriques :
+    - Simple clique dessus pour les faire apparaître.
+    - Changer l'apparence :
+        - Choisir les paramètres voulus avant d'ajouter une forme afin qu'elle s'affiche avec les paramètres choisis
+        OU double cliquer sur la forme lorsqu'elle est déjà présente afin de lui attribuer le style choisi après sa création
+        - Drag les coins afin de les aggrandir ou choisir sa taille prélablement avant sa création ou choisir une taille et double cliquer sur la forme afin de lui attribuer la valeur.
+- Texte :
+    - Simple clique dessus pour créer un carré de texte.
+    - Changer l'apparence :
+        - cf Formes géométriques, marche aussi pour le changement de police.
+- Poubelle : Supprime tous les élements présents afin d'avoir un esapace de dessin vide.
